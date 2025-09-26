@@ -5,6 +5,10 @@ def count_book_words(book):
         word_count += 1
     return word_count
 
+
+def sort_on(characters):
+    return characters["num"]
+
 def count_book_characters(book):
     characters = {}
 
@@ -20,3 +24,12 @@ def count_book_characters(book):
     return characters
 
 
+def sort_characters(characters):
+    sorted_characters = []
+    for character, num in characters.items():
+        sorted_characters.append({"char": character, "num": num})
+    sorted_characters.sort(reverse=True, key=sort_on)
+
+    return sorted_characters
+
+        
